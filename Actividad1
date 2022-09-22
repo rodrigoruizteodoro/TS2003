@@ -1,0 +1,24 @@
+import pandas as pd
+
+
+data=pd.read_csv("tallas.csv")
+print(data)
+
+h=list(data.Estatura)
+print(h)
+print("El promedio es: ", sum(h)/len(h))
+print(data['Estatura'].describe())
+
+
+def AnalisisCorrelacion (a,b):
+    coefPearson=np.corrcoef(a,b)
+    print(coefPearson)
+    plt.scatter(a,b,color="#FC1389")
+    plt.show()
+
+
+a=[12,9,14,6,16,8,10,10,5,7]
+b=[9,7,10,5,8,6,8,10,4,7]
+size=len(a)
+print(size)
+AnalisisCorrelacion(a,b)
